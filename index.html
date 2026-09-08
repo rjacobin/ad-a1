@@ -160,10 +160,30 @@
     }
     .takeaway-headline {
       margin: 0 0 8px;
+      padding-right: 54px;
       font-size: 15px;
       line-height: 1.2;
       font-weight: 820;
       letter-spacing: -0.018em;
+    }
+    .takeaway-number {
+      position: absolute;
+      top: -8px;
+      right: 1px;
+      color: rgba(100, 20, 38, 0.15);
+      font-size: 58px;
+      line-height: 1;
+      font-weight: 860;
+      letter-spacing: -0.07em;
+      font-variant-numeric: tabular-nums;
+      transition: color 180ms ease, transform 220ms ease;
+      user-select: none;
+      pointer-events: none;
+    }
+    .weekly-takeaway:hover .takeaway-number,
+    .weekly-takeaway:focus-within .takeaway-number {
+      color: rgba(255, 255, 255, 0.25);
+      transform: translateY(-1px);
     }
     .weekly-takeaway p {
       margin: 0 0 17px;
@@ -172,8 +192,19 @@
       line-height: 1.36;
       letter-spacing: -0.012em;
     }
-    .takeaway-links {
+    .recommended-label {
       margin-top: auto;
+      margin-bottom: 6px;
+      color: #81786f;
+      font-size: 9.5px;
+      font-weight: 800;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      transition: color 180ms ease;
+    }
+    .weekly-takeaway:hover .recommended-label,
+    .weekly-takeaway:focus-within .recommended-label { color: rgba(255, 255, 255, .72); }
+    .takeaway-links {
       display: flex;
       gap: 7px;
       flex-wrap: wrap;
@@ -556,7 +587,7 @@
       inset: 0;
       width: 100%;
       height: 100%;
-      padding: 3px;
+      padding: 2px;
       object-fit: contain;
       background: #fff;
     }
@@ -630,7 +661,7 @@
         <span class="a1-mark">A1</span>
         <span class="brand-name">The A&amp;D A1</span>
       </a>
-      <div class="updated">Updated Sep 6, 2026</div>
+      <div class="updated">updated as of 9/8</div>
     </div>
   </header>
 
@@ -640,23 +671,29 @@
       <div class="takeaway-grid">
         <article class="weekly-takeaway gradient-track">
           <div class="takeaway-content">
+            <span class="takeaway-number" aria-hidden="true">1</span>
             <h2 class="takeaway-headline">Production capacity comes first</h2>
             <p>Across missiles, interceptors and drones, the focus is shifting from proving new systems to producing them at useful scale. Recent contracts and policy moves are aimed at larger, steadier production runs.</p>
-            <div class="takeaway-links" aria-label="Recommended articles"><a class="takeaway-link" href="#csis-salvo">Air-defense production</a><a class="takeaway-link" href="#cheap-interceptors">Lower-cost interceptors</a><a class="takeaway-link" href="#patriot-thaad-surge">Patriot / THAAD capacity</a></div>
+            <div class="recommended-label">Recommended reads</div>
+            <div class="takeaway-links" aria-label="Recommended reads"><a class="takeaway-link" href="#csis-salvo">CSIS: Salvo capacity</a><a class="takeaway-link" href="#cheap-interceptors">Defense News: Cheaper interceptors</a><a class="takeaway-link" href="#patriot-thaad-surge">Defense News: Patriot / THAAD</a></div>
           </div>
         </article>
         <article class="weekly-takeaway gradient-track">
           <div class="takeaway-content">
+            <span class="takeaway-number" aria-hidden="true">2</span>
             <h2 class="takeaway-headline">Space competition keeps accelerating</h2>
             <p>Military space is moving beyond surveillance and communications. New networks, sensors and launch capacity are being built for a future where satellites may need to operate through interference, attack or loss.</p>
-            <div class="takeaway-links" aria-label="Recommended articles"><a class="takeaway-link" href="#orbital-arms-race">Orbital competition</a><a class="takeaway-link" href="#space-data-network">Space data network</a><a class="takeaway-link" href="#disksat">DiskSat</a></div>
+            <div class="recommended-label">Recommended reads</div>
+            <div class="takeaway-links" aria-label="Recommended reads"><a class="takeaway-link" href="#orbital-arms-race">Reuters: Orbital competition</a><a class="takeaway-link" href="#space-data-network">Breaking Defense: Data network</a><a class="takeaway-link" href="#disksat">Aviation Week: DiskSat demo</a></div>
           </div>
         </article>
         <article class="weekly-takeaway gradient-track">
           <div class="takeaway-content">
+            <span class="takeaway-number" aria-hidden="true">3</span>
             <h2 class="takeaway-headline">Drones learn in combat</h2>
             <p>Drones and autonomous systems are changing faster once they reach real units and combat. Field feedback is now shaping designs, tactics and buying decisions on a much shorter cycle.</p>
-            <div class="takeaway-links" aria-label="Recommended articles"><a class="takeaway-link" href="#csis-geran">Russia's Geran updates</a><a class="takeaway-link" href="#fort-hood-robots">Army robots</a><a class="takeaway-link" href="#commercial-tech-field">Commercial tech trial</a></div>
+            <div class="recommended-label">Recommended reads</div>
+            <div class="takeaway-links" aria-label="Recommended reads"><a class="takeaway-link" href="#csis-geran">CSIS: Geran evolution</a><a class="takeaway-link" href="#fort-hood-robots">Stars &amp; Stripes: Army robots</a><a class="takeaway-link" href="#commercial-tech-field">Breaking Defense: Field tech</a></div>
           </div>
         </article>
       </div>
@@ -666,34 +703,34 @@
       <h2 class="section-label" id="reading-title">Recommended Publications</h2>
       <div class="reading-links">
         <a class="reading-link" href="https://www.csis.org/" target="_blank" rel="noopener noreferrer" title="Center for Strategic and International Studies">
-          <span class="pub-logo"><span class="pub-fallback">CSIS</span><img src="https://www.csis.org/favicon.ico" alt="" loading="lazy" onerror="this.remove()" /></span><span class="reading-name">CSIS</span>
+          <span class="pub-logo"><span class="pub-fallback">CSIS</span><img src="https://www.google.com/s2/favicons?domain=csis.org&amp;sz=128" alt="" loading="lazy" onerror="this.remove()" /></span><span class="reading-name">CSIS</span>
         </a>
         <a class="reading-link" href="https://aviationweek.com/defense" target="_blank" rel="noopener noreferrer" title="Aviation Week">
-          <span class="pub-logo"><span class="pub-fallback">AW</span><img src="https://aviationweek.com/favicon.ico" alt="" loading="lazy" onerror="this.remove()" /></span><span class="reading-name">Aviation Week</span>
+          <span class="pub-logo"><span class="pub-fallback">AW</span><img src="https://www.google.com/s2/favicons?domain=aviationweek.com&amp;sz=128" alt="" loading="lazy" onerror="this.remove()" /></span><span class="reading-name">Aviation Week</span>
         </a>
         <a class="reading-link" href="https://breakingdefense.com/" target="_blank" rel="noopener noreferrer" title="Breaking Defense">
-          <span class="pub-logo"><span class="pub-fallback">BD</span><img src="https://breakingdefense.com/favicon.ico" alt="" loading="lazy" onerror="this.remove()" /></span><span class="reading-name">Breaking Defense</span>
+          <span class="pub-logo"><span class="pub-fallback">BD</span><img src="https://www.google.com/s2/favicons?domain=breakingdefense.com&amp;sz=128" alt="" loading="lazy" onerror="this.remove()" /></span><span class="reading-name">Breaking Defense</span>
         </a>
         <a class="reading-link" href="https://www.stripes.com/" target="_blank" rel="noopener noreferrer" title="Stars and Stripes">
-          <span class="pub-logo"><span class="pub-fallback">S&amp;S</span><img src="https://www.stripes.com/favicon.ico" alt="" loading="lazy" onerror="this.remove()" /></span><span class="reading-name">Stars and Stripes</span>
+          <span class="pub-logo"><span class="pub-fallback">S&amp;S</span><img src="https://www.google.com/s2/favicons?domain=stripes.com&amp;sz=128" alt="" loading="lazy" onerror="this.remove()" /></span><span class="reading-name">Stars and Stripes</span>
         </a>
         <a class="reading-link" href="https://www.defensenews.com/" target="_blank" rel="noopener noreferrer" title="Defense News">
-          <span class="pub-logo"><span class="pub-fallback">DN</span><img src="https://www.defensenews.com/favicon.ico" alt="" loading="lazy" onerror="this.remove()" /></span><span class="reading-name">Defense News</span>
+          <span class="pub-logo"><span class="pub-fallback">DN</span><img src="https://www.google.com/s2/favicons?domain=defensenews.com&amp;sz=128" alt="" loading="lazy" onerror="this.remove()" /></span><span class="reading-name">Defense News</span>
         </a>
         <a class="reading-link" href="https://news.usni.org/" target="_blank" rel="noopener noreferrer" title="USNI News">
-          <span class="pub-logo"><span class="pub-fallback">USNI</span><img src="https://news.usni.org/favicon.ico" alt="" loading="lazy" onerror="this.remove()" /></span><span class="reading-name">USNI News</span>
+          <span class="pub-logo"><span class="pub-fallback">USNI</span><img src="https://www.google.com/s2/favicons?domain=news.usni.org&amp;sz=128" alt="" loading="lazy" onerror="this.remove()" /></span><span class="reading-name">USNI News</span>
         </a>
         <a class="reading-link" href="https://www.twz.com/" target="_blank" rel="noopener noreferrer" title="The War Zone">
-          <span class="pub-logo"><span class="pub-fallback">TWZ</span><img src="https://www.twz.com/favicon.ico" alt="" loading="lazy" onerror="this.remove()" /></span><span class="reading-name">The War Zone</span>
+          <span class="pub-logo"><span class="pub-fallback">TWZ</span><img src="https://www.google.com/s2/favicons?domain=twz.com&amp;sz=128" alt="" loading="lazy" onerror="this.remove()" /></span><span class="reading-name">The War Zone</span>
         </a>
         <a class="reading-link" href="https://www.airandspaceforces.com/" target="_blank" rel="noopener noreferrer" title="Air &amp; Space Forces Magazine">
-          <span class="pub-logo"><span class="pub-fallback">A&amp;S</span><img src="https://www.airandspaceforces.com/favicon.ico" alt="" loading="lazy" onerror="this.remove()" /></span><span class="reading-name">Air &amp; Space Forces</span>
+          <span class="pub-logo"><span class="pub-fallback">A&amp;S</span><img src="https://www.google.com/s2/favicons?domain=airandspaceforces.com&amp;sz=128" alt="" loading="lazy" onerror="this.remove()" /></span><span class="reading-name">Air &amp; Space Forces</span>
         </a>
         <a class="reading-link" href="https://defensescoop.com/" target="_blank" rel="noopener noreferrer" title="DefenseScoop">
-          <span class="pub-logo"><span class="pub-fallback">DS</span><img src="https://defensescoop.com/favicon.ico" alt="" loading="lazy" onerror="this.remove()" /></span><span class="reading-name">DefenseScoop</span>
+          <span class="pub-logo"><span class="pub-fallback">DS</span><img src="https://www.google.com/s2/favicons?domain=defensescoop.com&amp;sz=128" alt="" loading="lazy" onerror="this.remove()" /></span><span class="reading-name">DefenseScoop</span>
         </a>
         <a class="reading-link" href="https://spacenews.com/" target="_blank" rel="noopener noreferrer" title="SpaceNews">
-          <span class="pub-logo"><span class="pub-fallback">SN</span><img src="https://spacenews.com/favicon.ico" alt="" loading="lazy" onerror="this.remove()" /></span><span class="reading-name">SpaceNews</span>
+          <span class="pub-logo"><span class="pub-fallback">SN</span><img src="https://www.google.com/s2/favicons?domain=spacenews.com&amp;sz=128" alt="" loading="lazy" onerror="this.remove()" /></span><span class="reading-name">SpaceNews</span>
         </a>
       </div>
     </section>
